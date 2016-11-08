@@ -23,9 +23,9 @@ const char array[] = "73167176531330624919225119674426574742355349194934"
 
 
 int main(void) {
-    unsigned long long int lpias=0, result=0;
+    unsigned long int lpias=0, result=0;
 
-    for (int i=0; i < ((sizeof(array)/sizeof(array[0])) - 13); i++) {
+    for (int i=0; i < (sizeof(array) - 13); i++) {
 
         result = (int)array[i]-48;
 
@@ -38,7 +38,7 @@ int main(void) {
         }
     }
 
-    printf("%llu\n", lpias);
+    printf("%lu\n", lpias);
 
     return 0;
 }
