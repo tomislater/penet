@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int is_prime(unsigned int x) {
-    unsigned int y = x-1;
+    unsigned int y;
 
-    for (; y > 1; y--) {
+    for (y=2; y*y <= x; y++) {
         if (x % y == 0) {
             return 0;
         }
