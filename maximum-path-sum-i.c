@@ -1,8 +1,9 @@
 #include <stdio.h>
 
+
 int main(void) {
 
-    int array[][15] = {
+    int array[15][15] = {
         {75,},
         {95,64},
         {17,47,82},
@@ -20,19 +21,12 @@ int main(void) {
         {4,62,98,27,23,9,70,98,73,93,38,53,60,4,23}
     };
 
-    for (int i = 0; i < (sizeof(array) / sizeof(array[sizeof(array)]) - 1); i++) {
-        for (int j = 0; j < (sizeof(array[i]) / sizeof(array[i][0])); j++) {
+    for (int i = 0; i < 14; i++) {
+        for (int j = 0; j < 15; j++) {
             if (array[i][j] == 0)
                 break;
 
             int value = array[i][j];
-
-            if (i == 0) {
-                // beginning
-                array[i+1][0] += value;
-                array[i+1][1] += value;
-                break;
-            }
 
             if (j == 0) {
                 // add the value to the next most left
@@ -60,7 +54,7 @@ int main(void) {
     // ok, time to get the biggest number from the last array
     int max = 0;
 
-    for (int i = 0; i < (sizeof(array) / sizeof(array[sizeof(array)])); i++) {
+    for (int i = 0; i < 15; i++) {
         if (array[14][i] > max)
             max = array[14][i];
     }
